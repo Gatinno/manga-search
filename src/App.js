@@ -1,24 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import { useFecth } from './hooks/useFetch';
+import RoutesService from './services/routesService';
 
 function App() {
+  const OPTIONS = {
+    methods: 'GET', 
+    headers: {
+      Accept: 'application/vnd.api+json', 
+      'Content-Type': 'application/vnd.api+json'
+    }};
+  const {fetchData, loading} = useFecth('https://kitsu.io/api/edge/manga', OPTIONS);
+  console.log(fetchData);
+  console.log(loading);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RoutesService />
   );
 }
 
