@@ -23,4 +23,4 @@ const useFecth = (url, options) => {
   },[]);
   return {fetchData, loading};
 }
-export {useFecth};
+export default useFecth;

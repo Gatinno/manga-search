@@ -1,5 +1,5 @@
 import './App.css';
-import { useFecth } from './hooks/useFetch';
+import  useFecth  from './hooks/useFetch';
 import RoutesService from './services/routesService';
 
 function App() {
