@@ -1,16 +1,9 @@
 import {useState, useEffect} from 'react';
-const OPTIONS = {
-  methods: 'GET', 
-  headers: {
-    Accept: 'application/vnd.api+json', 
-    'Content-Type': 'application/vnd.api+json'
-  }
-};
-const useFecth = (url) => {
+const useFecth = (url, options) => {
   const [fetchData, changeFetchData] = useState({});
   const [loading, changeLoading] = useState(false);
   useEffect(()=>{
-    fetch(url, OPTIONS)
+    fetch(url, options)
       .then(response => {
         if (response.ok) {
           return response.json()

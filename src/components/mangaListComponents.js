@@ -15,8 +15,6 @@ const MangaListComponent = ({manga}) => {
   useEffect(()=>{
     changeUrl(`https://kitsu.io/api/edge/manga?page[limit]=12&filter[text]=${manga}`)
   },[manga])
-  console.log(fetchData);
-  console.log(loading);
   return (
     <Row className="mt-5">
       {!loading ? 
