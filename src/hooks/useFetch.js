@@ -1,9 +1,16 @@
 import {useState, useEffect} from 'react';
-const useFecth = (url, options) => {
+const OPTIONS = {
+  methods: 'GET', 
+  headers: {
+    Accept: 'application/vnd.api+json', 
+    'Content-Type': 'application/vnd.api+json'
+  }
+};
+const useFecth = (url) => {
   const [fetchData, changeFetchData] = useState({});
   const [loading, changeLoading] = useState(false);
   useEffect(()=>{
-    fetch(url, options)
+    fetch(url, OPTIONS)
       .then(response => {
         if (response.ok) {
           return response.json()
@@ -20,7 +27,7 @@ const useFecth = (url, options) => {
       .finally(() => {
         changeLoading(true)
       })
-  },[]);
+  },[url]);
   return {fetchData, loading};
 }
 export default useFecth;
