@@ -5,7 +5,6 @@ function App() {
   return (
     <>
       <RoutesService />
-      <footer></footer>
     </>
   );
 }
