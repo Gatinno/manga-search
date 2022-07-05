@@ -24,6 +24,7 @@ const MangaView = () => {
 					genres={fetchData.data.relationships.genres.links.related}
 					startDate={fetchData.data.attributes.startDate}
 					status={fetchData.data.attributes.status}
+					synopsis={fetchData.data.attributes.synopsis}
 					characters={fetchData.data.relationships.characters.links.related}
 				/>
 			) : (
